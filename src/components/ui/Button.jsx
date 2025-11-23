@@ -33,7 +33,7 @@ const Button = ({
       className={`
         ${variants[variant]} 
         ${sizes[size]} 
-        rounded-xl font-semibold transition-all
+        rounded-xl font-semibold transition-all cursor-pointer
         flex items-center gap-2 justify-center
         disabled:opacity-50 disabled:cursor-not-allowed
         ${className}

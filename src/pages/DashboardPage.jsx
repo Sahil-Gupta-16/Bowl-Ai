@@ -62,13 +62,14 @@ const DashboardPage = () => {
               key={i}
               onClick={action.action}
               style={{ animationDelay: action.delay }}
-              className={`
+        className={`
                 bg-gradient-to-br ${action.gradient} ${action.hoverGradient}
                 rounded-2xl p-8 text-left 
                 transform transition-all duration-300
                 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20
                 ${mounted ? 'animate-fade-in-up' : 'opacity-0'}
                 group relative overflow-hidden
+          cursor-pointer
               `}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
@@ -121,7 +122,7 @@ const DashboardPage = () => {
               <h2 className="text-3xl font-extrabold">Recent Analyses</h2>
               <button 
                 onClick={() => navigate('/history')}
-                className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold flex items-center gap-2 group"
+                className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold flex items-center gap-2 group cursor-pointer"
               >
                 View All
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -174,7 +175,7 @@ const DashboardPage = () => {
                     </span>
                     <button 
                       onClick={() => navigate(`/analysis/${analysis.id}`)}
-                      className="px-6 py-2.5 rounded-xl bg-slate-700 hover:bg-emerald-600 transition-all text-sm font-semibold flex items-center gap-2 group/btn"
+                      className="px-6 py-2.5 rounded-xl bg-slate-700 hover:bg-emerald-600 transition-all text-sm font-semibold flex items-center gap-2 group/btn cursor-pointer"
                     >
                       <Eye className="w-4 h-4" />
                       View
@@ -271,7 +272,7 @@ const DashboardPage = () => {
                 <p className="text-sm text-gray-400 mb-5">Upload a new video to continue improving</p>
                 <button
                   onClick={() => navigate('/analysis')}
-                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 font-bold transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/50 flex items-center justify-center gap-2 group"
+                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 font-bold transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/50 flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <Upload className="w-5 h-5 group-hover:animate-bounce" />
                   New Analysis

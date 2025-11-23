@@ -41,7 +41,7 @@ const HistoryPage = () => {
             </h1>
             <p className="text-gray-400 text-lg">View and manage all your past bowling analyses</p>
           </div>
-          <button className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 font-semibold transition-all flex items-center gap-2 shadow-md shadow-black/50 whitespace-nowrap">
+          <button className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 font-semibold transition-all flex items-center gap-2 shadow-md shadow-black/50 whitespace-nowrap cursor-pointer">
             <Download className="w-5 h-5" /> Export All
           </button>
         </div>
@@ -142,11 +142,11 @@ const HistoryPage = () => {
                   <div className="flex gap-3">
                     <button
                       onClick={() => navigate(`/analysis/${analysis.id}`)}
-                      className="px-14 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 transition-colors text-sm font-semibold"
+                      className="px-14 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 transition-colors text-sm font-semibold cursor-pointer"
                     >
                       View Details
                     </button>
-                    <button className="w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 flex items-center justify-center transition-colors">
+                    <button className="w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 flex items-center justify-center transition-colors cursor-pointer">
                       <Download className="w-5 h-5" />
                     </button>
                   </div>

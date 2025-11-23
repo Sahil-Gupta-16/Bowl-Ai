@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Camera, Video, Upload, CheckCircle, Play, X, FileVideo, Zap, Info } from 'lucide-react';
+import { Video, Upload, CheckCircle, Play, X, FileVideo, Zap, Info } from 'lucide-react';
 
 const AnalysisPage = () => {
-  const [selectedAngle, setSelectedAngle] = useState('front');
   const [uploadedFile, setUploadedFile] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -83,50 +82,10 @@ const AnalysisPage = () => {
           <p className="text-gray-400">Upload your bowling video for instant biomechanical analysis</p>
         </div>
 
-        {/* Camera Angle Selection */}
+        {/* Single Upload (removed angle selection) */}
         <div className="mb-8">
-          <h2 className="text-xl font-bold mb-4">Select Camera Angle</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <button
-              onClick={() => setSelectedAngle('front')}
-              className={`relative bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 border-2 transition-all ${
-                selectedAngle === 'front'
-                  ? 'border-blue-500 ring-4 ring-blue-500/20'
-                  : 'border-slate-700 hover:border-slate-600'
-              }`}
-            >
-              {selectedAngle === 'front' && (
-                <div className="absolute top-4 right-4">
-                  <CheckCircle className="w-6 h-6 text-blue-500" />
-                </div>
-              )}
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4">
-                <Video className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Front View</h3>
-              <p className="text-gray-400 text-sm">Ideal for analyzing elbow angle & arm positioning</p>
-            </button>
-
-            <button
-              onClick={() => setSelectedAngle('side')}
-              className={`relative bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 border-2 transition-all ${
-                selectedAngle === 'side'
-                  ? 'border-purple-500 ring-4 ring-purple-500/20'
-                  : 'border-slate-700 hover:border-slate-600'
-              }`}
-            >
-              {selectedAngle === 'side' && (
-                <div className="absolute top-4 right-4">
-                  <CheckCircle className="w-6 h-6 text-purple-500" />
-                </div>
-              )}
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-4">
-                <Camera className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Side View</h3>
-              <p className="text-gray-400 text-sm">Ideal for analyzing knee angle & stride length</p>
-            </button>
-          </div>
+          <h2 className="text-xl font-bold mb-4">Upload Video</h2>
+          <p className="text-gray-400">We support a single upload flow — simply choose your video and start analysis.</p>
         </div>
 
         {/* Upload or Preview Zone */}
@@ -181,7 +140,7 @@ const AnalysisPage = () => {
                 </div>
                 <button
                   onClick={handleRemove}
-                  className="w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors flex items-center justify-center"
+                  className="w-10 h-10 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors flex items-center justify-center cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -198,8 +157,8 @@ const AnalysisPage = () => {
 
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400">Camera Angle</span>
-                  <span className="font-semibold capitalize">{selectedAngle} View</span>
+                  <span className="text-gray-400">Video</span>
+                  <span className="font-semibold">Uploaded Video</span>
                 </div>
 
                 <div className="flex justify-between items-center">
@@ -227,14 +186,14 @@ const AnalysisPage = () => {
                 <button
                   onClick={handleAnalyze}
                   disabled={isAnalyzing}
-                  className="flex-1 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Zap className="w-5 h-5" />
                   {isAnalyzing ? 'Analyzing...' : 'Start Analysis'}
                 </button>
                 <button
                   onClick={handleRemove}
-                  className="px-6 py-3 rounded-xl border-2 border-slate-700 hover:border-slate-600 font-semibold transition-all"
+                  className="px-6 py-3 rounded-xl border-2 border-slate-700 hover:border-slate-600 font-semibold transition-all cursor-pointer"
                 >
                   Cancel
                 </button>

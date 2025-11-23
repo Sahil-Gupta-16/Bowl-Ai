@@ -58,7 +58,7 @@ const Navigation = () => {
               <motion.button
                 key={item.path}
                 onClick={() => navigate(item.path)}
-                className={`px-16 py-2 rounded-lg transition-all font-medium ${
+                className={`px-16 py-2 rounded-lg transition-all font-medium cursor-pointer ${
                   location.pathname === item.path
                     ? 'bg-emerald-500/20 text-emerald-400'
                     : 'text-gray-400 hover:text-white hover:bg-slate-800'
@@ -76,7 +76,7 @@ const Navigation = () => {
             {/* Theme Toggle */}
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label="Toggle theme"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -90,7 +90,7 @@ const Navigation = () => {
 
             {/* Notifications */}
             <motion.button 
-              className="hidden md:block p-2 rounded-lg hover:bg-slate-800 transition-colors relative"
+              className="hidden md:block p-2 rounded-lg hover:bg-slate-800 transition-colors relative cursor-pointer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -109,7 +109,7 @@ const Navigation = () => {
             <div className="relative hidden md:block">
               <motion.button
                 onClick={() => setShowUserMenu(!showUserMenu)}
-                className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-800 transition-colors"
+                className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -131,17 +131,17 @@ const Navigation = () => {
                     <p className="text-sm font-semibold text-white">John Bowler</p>
                     <p className="text-xs text-gray-400">john@bowlai.com</p>
                   </div>
-                  <button className="w-full text-left px-16 py-2 text-sm text-gray-300 hover:bg-slate-700 transition-colors">
+                  <button className="w-full text-left px-16 py-2 text-sm text-gray-300 hover:bg-slate-700 transition-colors cursor-pointer">
                     Profile Settings
                   </button>
-                  <button className="w-full text-left px-16 py-2 text-sm text-gray-300 hover:bg-slate-700 transition-colors">
+                  <button className="w-full text-left px-16 py-2 text-sm text-gray-300 hover:bg-slate-700 transition-colors cursor-pointer">
                     My Analyses
                   </button>
-                  <button className="w-full text-left px-16 py-2 text-sm text-gray-300 hover:bg-slate-700 transition-colors">
+                  <button className="w-full text-left px-16 py-2 text-sm text-gray-300 hover:bg-slate-700 transition-colors cursor-pointer">
                     Billing
                   </button>
                   <div className="border-t border-slate-700">
-                    <button className="w-full text-left px-16 py-2 text-sm text-red-400 hover:bg-slate-700 transition-colors">
+                    <button className="w-full text-left px-16 py-2 text-sm text-red-400 hover:bg-slate-700 transition-colors cursor-pointer">
                       Sign Out
                     </button>
                   </div>
@@ -155,6 +155,7 @@ const Navigation = () => {
                 variant="primary" 
                 size="sm"
                 onClick={() => navigate('/analysis')}
+                className="cursor-pointer"
               >
                 Get Started
               </Button>
@@ -162,7 +163,7 @@ const Navigation = () => {
 
             {/* Mobile Menu Toggle (Optional) */}
             <motion.button
-              className="md:hidden p-2 rounded-lg hover:bg-slate-800 transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -182,7 +183,7 @@ const Navigation = () => {
               <button
                 key={item.path}
                 onClick={() => navigate(item.path)}
-                className={`px-16 py-2 rounded-lg text-left transition-all ${
+                className={`px-16 py-2 rounded-lg text-left transition-all cursor-pointer ${
                   location.pathname === item.path
                     ? 'bg-emerald-500/20 text-emerald-400'
                     : 'text-gray-400 hover:text-white hover:bg-slate-800'
