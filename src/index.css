@@ -1,0 +1,4 @@
+/* Main stylesheet with Tailwind CSS v4 imports and custom styles */
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
